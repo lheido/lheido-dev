@@ -1,13 +1,19 @@
 ---
+export interface Props {
+  title: string;
+  subtitle: string;
+}
+
+const { title, subtitle } = Astro.props;
 ---
 
 <section id="home">
   <div class="content">
     <div class="visual"></div>
-    <h1><span>Léonard Treille</span></h1>
+    <h1><span>{title}</span></h1>
   </div>
   <footer>
-    <p>Développeur</p>
+    <p>{subtitle}</p>
   </footer>
 </section>
 
@@ -127,6 +133,10 @@
     transform: translateY(40%);
     opacity: 0;
     animation: footerP 0.2s 0.8s 1 ease-out forwards;
+  }
+
+  footer p:lang(en) {
+    @apply text-[28.2vw] md:text-[17.9vw];
   }
 
   @keyframes footerP {
