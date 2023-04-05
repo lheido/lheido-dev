@@ -52,8 +52,8 @@ const { title, subtitle } = Astro.props;
   h1 {
     @apply relative z-10 block;
     @apply text-neutral font-thin bg-primary px-8 py-8 leading-none;
+    @apply text-[8vw] md:text-[6vw];
     @apply overflow-hidden;
-    font-size: 6vw;
     animation: title 0.5s 0s 1 ease-out forwards;
   }
 
@@ -124,7 +124,7 @@ const { title, subtitle } = Astro.props;
   }
 
   footer p {
-    @apply absolute left-0;
+    @apply absolute right-0 md:right-[38vw];
     @apply font-accent bg-primary;
     @apply uppercase py-4 select-none;
     @apply w-full text-[25.5vw] md:w-auto md:text-[16vw];
@@ -133,10 +133,6 @@ const { title, subtitle } = Astro.props;
     transform: translateY(40%);
     opacity: 0;
     animation: footerP 0.2s 0.8s 1 ease-out forwards;
-  }
-
-  footer p:lang(en) {
-    @apply text-[28.2vw] md:text-[17.9vw];
   }
 
   @keyframes footerP {
