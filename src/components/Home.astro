@@ -1,0 +1,167 @@
+---
+---
+
+<section id="home">
+  <div class="content">
+    <div class="visual"></div>
+    <h1><span>Léonard Treille</span></h1>
+  </div>
+  <footer>
+    <p>Développeur</p>
+  </footer>
+</section>
+
+<style>
+  #home {
+    height: 100vh;
+    height: 100svh;
+    @apply relative flex flex-col;
+  }
+
+  .content {
+    @apply flex-1 flex justify-center items-center;
+  }
+
+  .visual {
+    @apply absolute top-0 right-0 left-0 overflow-hidden md:left-[63vw];
+    background-image: url("https://ik.imagekit.io/lheido/home-4.png?tr=w-0.5");
+    background-size: cover;
+    background-position: center;
+    transform: translateY(-5%);
+    opacity: 0;
+    animation: visual 0.5s 0.5s 1 ease-out forwards;
+  }
+
+  @keyframes visual {
+    0% {
+      transform: translateY(-5%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+
+  h1 {
+    @apply relative z-10 block;
+    @apply text-neutral font-thin bg-primary px-8 py-8 leading-none;
+    @apply overflow-hidden;
+    font-size: 6vw;
+    animation: title 0.5s 0s 1 ease-out forwards;
+  }
+
+  @keyframes title {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  h1::before {
+    @apply absolute bottom-0 left-0 h-1 w-full bg-neutral;
+    content: "";
+    animation: h1Before 0.5s 0s 1 ease-out forwards;
+    transform-origin: left;
+  }
+
+  @keyframes h1Before {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+
+  h1::after {
+    @apply absolute bottom-0 right-0 h-full w-1 bg-neutral;
+    content: "";
+    animation: h1After 0.5s 0.5s 1 ease-out forwards;
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+
+  @keyframes h1After {
+    0% {
+      transform: scaleY(0);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+
+  h1 span {
+    @apply relative block;
+  }
+
+  h1 span::after {
+    @apply absolute top-0 right-0 bottom-0 left-0;
+    @apply block bg-primary;
+    content: "";
+    animation: h1SpanAfter 1s 0s 1 ease-out forwards;
+  }
+
+  @keyframes h1SpanAfter {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  footer {
+    @apply relative;
+  }
+
+  footer p {
+    @apply absolute left-0;
+    @apply font-accent bg-primary;
+    @apply uppercase py-4 select-none;
+    @apply w-full text-[25.5vw] md:w-auto md:text-[16vw];
+    z-index: 1;
+    line-height: 1;
+    transform: translateY(40%);
+    opacity: 0;
+    animation: footerP 0.2s 0.8s 1 ease-out forwards;
+  }
+
+  @keyframes footerP {
+    0% {
+      transform: translateY(40%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(20%);
+      opacity: 1;
+    }
+  }
+
+  .visual,
+  footer p {
+    bottom: 16vh;
+    bottom: 16svh;
+  }
+
+  footer::after {
+    @apply bg-neutral block relative;
+    content: "";
+    height: 16vh;
+    height: 16svh;
+    z-index: 2;
+    transform: translateY(100%);
+    animation: footerAfter 0.6s 0.2s 1 ease-out forwards;
+  }
+
+  @keyframes footerAfter {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+</style>

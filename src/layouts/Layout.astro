@@ -1,35 +1,63 @@
 ---
+import "overlayscrollbars/overlayscrollbars.css";
+
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="fr" data-overlayscrollbars-initialize>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Loop&family=Ubuntu+Mono&family=Ubuntu:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body data-overlayscrollbars-initialize>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+  :root {
+    --color-primary: hsla(247, 56%, 82%, 1);
+    --color-primary-content: hsla(0, 0%, 16%, 1);
+    --color-primary-focus: hsla(247, 56%, 78%, 1);
+    --color-accent: hsla(51, 65%, 77%, 1);
+    --color-accent-content: hsla(0, 0%, 16%, 1);
+    --color-accent-focus: hsla(51, 65%, 73%, 1);
+    --color-neutral: hsla(0, 0%, 16%, 1);
+    --color-neutral-content: hsla(0, 0%, 86%, 1);
+    --color-neutral-focus: hsla(0, 0%, 12%, 1);
+  }
+
+  html {
+    @apply bg-primary font-sans m-0 p-0 scroll-smooth;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  code {
+    @apply font-mono;
+  }
+  *::selection {
+    @apply bg-accent;
+  }
 </style>
+<script>
+  import { OverlayScrollbars } from "overlayscrollbars";
+  OverlayScrollbars(document.body, {
+    scrollbars: {
+      autoHide: "move",
+      autoHideDelay: 500,
+    },
+    showNativeOverlaidScrollbars: true,
+  });
+</script>
