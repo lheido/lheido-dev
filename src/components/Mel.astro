@@ -1,0 +1,38 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<section
+  id="project-mel"
+  class="relative min-h-screen overflow-hidden bg-primary flex flex-col"
+>
+  <img
+    class="logo w-[20vw] h-[20vw] max-md:hidden absolute bottom-0 right-0 rounded-3xl"
+    src="/mel.png"
+    alt="My Everyday Lolita logo"
+  />
+  <h1><span>{title}</span></h1>
+  <div class="content">
+    <slot />
+  </div>
+</section>
+
+<style></style>
+
+<script>
+  import { inView } from "motion";
+
+  inView(
+    "#project-mel",
+    () => {
+      document
+        .querySelector<HTMLDivElement>("#project-mel")!
+        .classList.add("visible");
+    },
+    { amount: 0.75 }
+  );
+</script>

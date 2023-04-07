@@ -6,9 +6,12 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<section id="about-me">
+<section
+  id="about-me"
+  class="relative min-h-screen overflow-hidden bg-neutral text-neutral-content"
+>
   <svg
-    class="visual"
+    class="visual absolute top-[50vh] right-1/2 w-[70vw] h-[70vw] md:-top-[10vw] md:right-0 md:w-[35vw] md:h-[35vw]"
     width="300"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -224,71 +227,65 @@ const { title } = Astro.props;
       </path>
     </g>
   </svg>
-  <h1><span>{title}</span></h1>
-  <div class="content">
+  <h1
+    class="relative font-bold px-8 py-[10vh] md:py-[8vh] md:px-16 xl:py-[16vh] text-[15vw] md:text-[9vw]"
+  >
+    <span>{title}</span>
+  </h1>
+  <div
+    class="content relative p-8 md:px-16 md:ml-[--about-me-bw] max-md:bg-primary-focus max-md:text-primary-content"
+  >
     <slot />
   </div>
 
-  <style is:global>
+  <style>
     :root {
       --about-me-sbw: 0%;
       --about-me-bw: 28%;
       --about-me-duration: 0.8s;
     }
 
-    #about-me {
-      @apply relative min-h-screen overflow-hidden;
-      @apply bg-neutral text-neutral-content;
-    }
-
-    #about-me::before {
+    section::before {
       @apply absolute h-full top-0 left-0 bg-primary;
       @apply w-[--about-me-sbw];
       content: "";
       transition: width var(--about-me-duration) ease;
     }
 
-    #about-me.visible::before {
+    section.visible::before {
       @apply w-[--about-me-bw];
     }
 
-    #about-me .content {
-      @apply relative;
-      @apply p-8 md:px-16 md:ml-[--about-me-bw];
-      @apply max-md:bg-primary-focus max-md:text-primary-content;
+    .content {
       @apply translate-y-[25%] opacity-0;
       transition: transform var(--about-me-duration) ease,
         opacity var(--about-me-duration) ease;
     }
 
-    #about-me.visible .content {
+    .visible .content {
       @apply translate-y-0 opacity-100;
     }
 
-    #about-me .visual {
-      @apply absolute top-[50vh] right-1/2 -translate-y-1/2 translate-x-1/2;
-      @apply w-[70vw] h-[70vw];
-      @apply md:-top-[10vw] md:right-0 md:translate-y-[20%] md:translate-x-2/4 md:w-[35vw] md:h-[35vw];
+    .visual {
+      @apply -translate-y-1/2 translate-x-1/2;
+      @apply md:translate-y-[20%] md:translate-x-2/4;
       @apply opacity-75 md:opacity-0;
       transition: top var(--about-me-duration) ease,
         transform var(--about-me-duration) ease,
         opacity var(--about-me-duration) ease;
     }
 
-    #about-me.visible .visual {
+    .visible .visual {
       @apply top-[14vh] translate-y-0 opacity-20;
       @apply md:-top-[10vw] md:right-0 md:translate-y-[20%] md:translate-x-1/4 md:opacity-50;
     }
 
-    #about-me .content::before {
+    .content::before {
       @apply absolute top-0 left-4 md:left-8 bg-neutral md:bg-primary w-px h-full scale-y-90 md:scale-y-100;
       content: "";
     }
 
-    #about-me h1 {
-      @apply relative font-bold opacity-0;
-      @apply px-8 py-[10vh] md:py-[8vh] md:px-16 xl:py-[16vh];
-      @apply text-[15vw] md:text-[9vw];
+    h1 {
       background: linear-gradient(
         90deg,
         var(--color-neutral) var(--about-me-bw),
@@ -301,10 +298,11 @@ const { title } = Astro.props;
       -moz-text-fill-color: transparent;
       background-clip: text;
       text-fill-color: transparent;
+      opacity: 0;
       transition: opacity var(--about-me-duration) ease;
     }
 
-    #about-me.visible h1 {
+    .visible h1 {
       @apply opacity-100;
     }
   </style>

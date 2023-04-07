@@ -1,0 +1,38 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<section
+  id="project-pink-dog"
+  class="relative min-h-screen overflow-hidden bg-primary flex flex-col"
+>
+  <img
+    class="logo logo w-[30vw] h-[30vw] max-md:hidden absolute bottom-0 right-0"
+    src="/pink-dog.png"
+    alt="Pink Dog logo"
+  />
+  <h1><span>{title}</span></h1>
+  <div class="content">
+    <slot />
+  </div>
+</section>
+
+<style></style>
+
+<script>
+  import { inView } from "motion";
+
+  inView(
+    "#project-pink-dog",
+    () => {
+      document
+        .querySelector<HTMLDivElement>("#project-pink-dog")!
+        .classList.add("visible");
+    },
+    { amount: 0.75 }
+  );
+</script>

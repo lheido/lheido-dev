@@ -7,29 +7,34 @@ export interface Props {
 const { title, subtitle } = Astro.props;
 ---
 
-<section id="home">
-  <div class="content">
-    <div class="visual"></div>
-    <h1><span>{title}</span></h1>
+<section id="home" class="relative flex flex-col">
+  <div class="content flex-1 flex justify-center items-center">
+    <div
+      class="visual absolute top-0 right-0 left-0 overflow-hidden md:left-[63vw]"
+    >
+    </div>
+    <h1
+      class="relative z-10 block text-neutral font-thin bg-primary px-8 py-8 leading-none overflow-hidden text-[8vw] md:text-[6vw]"
+    >
+      <span class="relative block">{title}</span>
+    </h1>
   </div>
-  <footer>
-    <p>{subtitle}</p>
+  <footer class="relative">
+    <p
+      class="absolute right-0 md:right-[38vw] font-accent bg-primary uppercase py-4 select-none w-full text-[25.5vw] md:w-auto md:text-[16vw] leading-none"
+    >
+      {subtitle}
+    </p>
   </footer>
 </section>
 
 <style>
   #home {
-    @apply relative flex flex-col;
     height: 100vh;
     height: 100svh;
   }
 
-  .content {
-    @apply flex-1 flex justify-center items-center;
-  }
-
   .visual {
-    @apply absolute top-0 right-0 left-0 overflow-hidden md:left-[63vw];
     background-image: url("https://ik.imagekit.io/lheido/home-4.png?tr=w-0.5");
     background-size: cover;
     background-position: center;
@@ -50,10 +55,7 @@ const { title, subtitle } = Astro.props;
   }
 
   h1 {
-    @apply relative z-10 block;
-    @apply text-neutral font-thin bg-primary px-8 py-8 leading-none;
-    @apply text-[8vw] md:text-[6vw];
-    @apply overflow-hidden;
+    opacity: 0;
     animation: title 0.5s 0s 1 ease-out forwards;
   }
 
@@ -99,10 +101,6 @@ const { title, subtitle } = Astro.props;
     }
   }
 
-  h1 span {
-    @apply relative block;
-  }
-
   h1 span::after {
     @apply absolute top-0 right-0 bottom-0 left-0;
     @apply block bg-primary;
@@ -119,17 +117,8 @@ const { title, subtitle } = Astro.props;
     }
   }
 
-  footer {
-    @apply relative;
-  }
-
   footer p {
-    @apply absolute right-0 md:right-[38vw];
-    @apply font-accent bg-primary;
-    @apply uppercase py-4 select-none;
-    @apply w-full text-[25.5vw] md:w-auto md:text-[16vw];
     z-index: 1;
-    line-height: 1;
     transform: translateY(40%);
     opacity: 0;
     animation: footerP 0.2s 0.8s 1 ease-out forwards;
