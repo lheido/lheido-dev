@@ -1,5 +1,7 @@
 ---
 import "overlayscrollbars/overlayscrollbars.css";
+import Footer from "../components/Footer.astro";
+import Cube from "../components/cube/Cube";
 
 export interface Props {
   title: string;
@@ -26,6 +28,8 @@ const { title, lang = "fr" } = Astro.props;
   </head>
   <body data-overlayscrollbars-initialize>
     <slot />
+    <Cube />
+    <Footer />
   </body>
 </html>
 <style is:global>
@@ -36,20 +40,31 @@ const { title, lang = "fr" } = Astro.props;
     --color-accent: hsla(51, 65%, 77%, 1);
     --color-accent-content: hsla(0, 0%, 16%, 1);
     --color-accent-focus: hsla(51, 65%, 73%, 1);
+    --color-accent-edge: hsla(51, 65%, 38%, 1);
     --color-neutral: hsla(0, 0%, 16%, 1);
     --color-neutral-content: hsla(0, 0%, 86%, 1);
     --color-neutral-focus: hsla(0, 0%, 12%, 1);
   }
 
   html {
-    @apply bg-primary font-sans m-0 p-0 scroll-smooth;
+    @apply bg-primary font-sans m-0 p-0 scroll-smooth md:snap-y md:snap-proximity;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
   code {
     @apply font-mono;
   }
   *::selection {
-    @apply bg-accent;
+    @apply bg-accent text-neutral;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    -moz-background-clip: initial;
+    -moz-text-fill-color: initial;
+    background-clip: initial;
+    text-fill-color: initial;
+  }
+
+  main > section {
+    @apply snap-start;
   }
 </style>
 <script>

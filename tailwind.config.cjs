@@ -16,6 +16,7 @@ module.exports = {
         DEFAULT: "var(--color-accent)",
         content: "var(--color-accent-content)",
         focus: "var(--color-accent-focus)",
+        edge: "var(--color-accent-edge)",
       },
       neutral: {
         DEFAULT: "var(--color-neutral)",
@@ -28,17 +29,6 @@ module.exports = {
       mono: ["Ubuntu Mono", "monospace"],
       accent: ["Zen Loop", "Ubuntu", "sans-serif"],
     },
-    fontSize: {
-      "10xl": ["9rem", "1"],
-      "11xl": ["10rem", "1"],
-      "12xl": ["11rem", "1"],
-      "13xl": ["12rem", "1"],
-      "14xl": ["13rem", "1"],
-      "15xl": ["14rem", "1"],
-      "16xl": ["15rem", "1"],
-      "17xl": ["16rem", "1"],
-      "18xl": ["17rem", "1"],
-    },
     extend: {
       height: {
         svh: "100svh",
@@ -50,6 +40,17 @@ module.exports = {
         "7xl": "3.5rem",
         "8xl": "4rem",
         "9xl": "4.5rem",
+      },
+      fontSize: {
+        "10xl": ["9rem", "1"],
+        "11xl": ["10rem", "1"],
+        "12xl": ["11rem", "1"],
+        "13xl": ["12rem", "1"],
+        "14xl": ["13rem", "1"],
+        "15xl": ["14rem", "1"],
+        "16xl": ["15rem", "1"],
+        "17xl": ["16rem", "1"],
+        "18xl": ["17rem", "1"],
       },
     },
   },

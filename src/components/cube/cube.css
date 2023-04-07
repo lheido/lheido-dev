@@ -1,0 +1,57 @@
+:root {
+  --cube-scale: 1;
+  --cube-size: 100px;
+  --cube-fz: 1.3rem;
+  --cube-ry: 15deg;
+}
+
+.cube-wrapper {
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cube {
+  @apply relative;
+  height: var(--cube-size);
+  width: var(--cube-size);
+  transform: scale3d(var(--cube-scale), var(--cube-scale), var(--cube-scale))
+    rotateX(-25deg) rotateY(var(--cube-ry)) rotateZ(0deg);
+  transform-style: preserve-3d;
+}
+
+.cube div {
+  @apply absolute h-full w-full border border-accent-edge;
+  @apply flex justify-center items-center;
+  @apply font-bold text-accent-edge;
+  font-size: var(--cube-fz);
+}
+
+.front {
+  @apply bg-accent;
+  transform: translateZ(calc(var(--cube-size) / 2));
+}
+.back {
+  @apply bg-accent;
+  transform: translateZ(calc(var(--cube-size) / -2)) rotateY(180deg);
+}
+.top {
+  @apply bg-accent;
+  transform: rotateX(-270deg) translateY(calc(var(--cube-size) / -2));
+  transform-origin: top center;
+}
+.bottom {
+  @apply bg-accent;
+  transform: rotateX(270deg) translateY(calc(var(--cube-size) / 2));
+  transform-origin: bottom center;
+}
+.left {
+  @apply bg-accent;
+  transform: rotateY(270deg) translateX(calc(var(--cube-size) / -2));
+  transform-origin: center left;
+}
+.right {
+  @apply bg-accent;
+  transform: rotateY(-270deg) translateX(calc(var(--cube-size) / 2));
+  transform-origin: top right;
+}
