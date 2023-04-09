@@ -183,13 +183,7 @@ const { title, subtitle } = Astro.props;
 </style>
 
 <script>
-  import { inView } from "motion";
+  import { inView } from "../shared/in-view";
 
-  inView(
-    "#home",
-    () => {
-      document.querySelector<HTMLDivElement>("#home")!.classList.add("visible");
-    },
-    { amount: 0.75 }
-  );
+  inView("#home");
 </script>
