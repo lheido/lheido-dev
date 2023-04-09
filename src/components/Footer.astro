@@ -1,4 +1,12 @@
 ---
+import {
+  dossierUrl,
+  githubUrl,
+  instagramUrl,
+  linkedInUrl,
+  pinkDogUrl,
+} from "../shared/utils";
+import Icon from "./Icon";
 ---
 
 <footer
@@ -20,71 +28,45 @@
       <li>
         <a
           class="flex items-center gap-4 hover:text-accent transition-colors"
-          href="https://www.linkedin.com/in/leonard-treille/"
+          href={linkedInUrl}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 16 16"
-            class="w-5 h-5"
-          >
-            <g class="fill-neutral-content">
-              <path
-                d="M15.3,0H0.7C0.3,0,0,0.3,0,0.7v14.7C0,15.7,0.3,16,0.7,16h14.7c0.4,0,0.7-0.3,0.7-0.7V0.7 C16,0.3,15.7,0,15.3,0z M4.7,13.6H2.4V6h2.4V13.6z M3.6,5C2.8,5,2.2,4.3,2.2,3.6c0-0.8,0.6-1.4,1.4-1.4c0.8,0,1.4,0.6,1.4,1.4 C4.9,4.3,4.3,5,3.6,5z M13.6,13.6h-2.4V9.9c0-0.9,0-2-1.2-2c-1.2,0-1.4,1-1.4,2v3.8H6.2V6h2.3v1h0c0.3-0.6,1.1-1.2,2.2-1.2 c2.4,0,2.8,1.6,2.8,3.6V13.6z"
-              ></path>
-            </g>
-          </svg>
+          <Icon icon="linkedin" />
           <span>LinkedIn</span>
         </a>
       </li>
       <li>
         <a
           class="flex items-center gap-4 hover:text-accent transition-colors"
-          href="https://github.com/lheido"
+          href={githubUrl}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 16 16"
-            class="w-5 h-5"
-          >
-            <g>
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                class="fill-neutral-content"
-                d="M8,0.2c-4.4,0-8,3.6-8,8c0,3.5,2.3,6.5,5.5,7.6 C5.9,15.9,6,15.6,6,15.4c0-0.2,0-0.7,0-1.4C3.8,14.5,3.3,13,3.3,13c-0.4-0.9-0.9-1.2-0.9-1.2c-0.7-0.5,0.1-0.5,0.1-0.5 c0.8,0.1,1.2,0.8,1.2,0.8C4.4,13.4,5.6,13,6,12.8c0.1-0.5,0.3-0.9,0.5-1.1c-1.8-0.2-3.6-0.9-3.6-4c0-0.9,0.3-1.6,0.8-2.1 c-0.1-0.2-0.4-1,0.1-2.1c0,0,0.7-0.2,2.2,0.8c0.6-0.2,1.3-0.3,2-0.3c0.7,0,1.4,0.1,2,0.3c1.5-1,2.2-0.8,2.2-0.8 c0.4,1.1,0.2,1.9,0.1,2.1c0.5,0.6,0.8,1.3,0.8,2.1c0,3.1-1.9,3.7-3.7,3.9C9.7,12,10,12.5,10,13.2c0,1.1,0,1.9,0,2.2 c0,0.2,0.1,0.5,0.6,0.4c3.2-1.1,5.5-4.1,5.5-7.6C16,3.8,12.4,0.2,8,0.2z"
-              ></path>
-            </g>
-          </svg>
+          <Icon icon="github" />
           <span>GitHub</span>
         </a>
       </li>
       <li>
         <a
           class="flex items-center gap-4 hover:text-accent transition-colors"
-          href="https://www.instagram.com/lheido/"
+          href={instagramUrl}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 16 16"
-            class="w-5 h-5"
-          >
-            <g class="fill-neutral-content">
-              <path
-                d="M8,1.441c2.136,0,2.389.009,3.233.047a4.419,4.419,0,0,1,1.485.276,2.472,2.472,0,0,1,.92.6,2.472,2.472,0,0,1,.6.92,4.419,4.419,0,0,1,.276,1.485c.038.844.047,1.1.047,3.233s-.009,2.389-.047,3.233a4.419,4.419,0,0,1-.276,1.485,2.644,2.644,0,0,1-1.518,1.518,4.419,4.419,0,0,1-1.485.276c-.844.038-1.1.047-3.233.047s-2.389-.009-3.233-.047a4.419,4.419,0,0,1-1.485-.276,2.472,2.472,0,0,1-.92-.6,2.472,2.472,0,0,1-.6-.92,4.419,4.419,0,0,1-.276-1.485c-.038-.844-.047-1.1-.047-3.233s.009-2.389.047-3.233a4.419,4.419,0,0,1,.276-1.485,2.472,2.472,0,0,1,.6-.92,2.472,2.472,0,0,1,.92-.6,4.419,4.419,0,0,1,1.485-.276c.844-.038,1.1-.047,3.233-.047M8,0C5.827,0,5.555.009,4.7.048A5.868,5.868,0,0,0,2.76.42a3.908,3.908,0,0,0-1.417.923A3.908,3.908,0,0,0,.42,2.76,5.868,5.868,0,0,0,.048,4.7C.009,5.555,0,5.827,0,8s.009,2.445.048,3.3A5.868,5.868,0,0,0,.42,13.24a3.908,3.908,0,0,0,.923,1.417,3.908,3.908,0,0,0,1.417.923,5.868,5.868,0,0,0,1.942.372C5.555,15.991,5.827,16,8,16s2.445-.009,3.3-.048a5.868,5.868,0,0,0,1.942-.372,4.094,4.094,0,0,0,2.34-2.34,5.868,5.868,0,0,0,.372-1.942c.039-.853.048-1.125.048-3.3s-.009-2.445-.048-3.3A5.868,5.868,0,0,0,15.58,2.76a3.908,3.908,0,0,0-.923-1.417A3.908,3.908,0,0,0,13.24.42,5.868,5.868,0,0,0,11.3.048C10.445.009,10.173,0,8,0Z"
-              ></path>
-              <path
-                d="M8,3.892A4.108,4.108,0,1,0,12.108,8,4.108,4.108,0,0,0,8,3.892Zm0,6.775A2.667,2.667,0,1,1,10.667,8,2.667,2.667,0,0,1,8,10.667Z"
-              ></path>
-              <circle cx="12.27" cy="3.73" r="0.96"></circle>
-            </g>
-          </svg>
+          <Icon icon="instagram" />
           <span>Instagram</span>
+        </a>
+      </li>
+      <li>
+        <a
+          class="flex items-center gap-4 hover:text-accent transition-colors"
+          href={dossierUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon icon="fold" />
+          <span>Dossier de compétences</span>
         </a>
       </li>
     </ul>
@@ -93,8 +75,8 @@
     <h1 class="text-4xl mt-auto">Remerciements</h1>
     <p class="mt-8">
       Merci à <a
-        class="hover:text-[#ed83c2] transition-colors"
-        href="https://www.pink-dog.fr/"
+        class="hover:text-[#ed83c2] transition-colors underline"
+        href={pinkDogUrl}
         target="_blank"
         rel="noopener noreferrer">Pink Dog</a
       > pour les photos et les illustrations !
@@ -103,13 +85,25 @@
 </footer>
 
 <style>
-  footer {
-    min-height: 50vh;
+  :root {
+    --footer-duration: 0.5s;
+  }
+
+  @media (min-width: 768px) {
+    footer {
+      @apply border-0 border-primary rounded-3xl;
+      min-height: 50vh;
+      transition: border var(--footer-duration) ease;
+    }
+
+    footer.visible {
+      @apply border-[16px];
+    }
   }
 
   .socials {
     transform: translateY(25%);
-    transition: transform 0.5s ease;
+    transition: transform var(--footer-duration) ease;
   }
 
   footer.visible .socials {
@@ -118,7 +112,7 @@
 
   .thanks {
     transform: translateY(-25%);
-    transition: transform 0.5s ease;
+    transition: transform var(--footer-duration) ease;
   }
 
   footer.visible .thanks {
@@ -127,7 +121,7 @@
 
   .socials h1 {
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: opacity var(--footer-duration) ease;
   }
 
   footer.visible .socials h1 {
@@ -136,7 +130,7 @@
 
   .socials ul {
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: opacity var(--footer-duration) ease;
   }
 
   footer.visible .socials ul {
@@ -146,7 +140,8 @@
   img {
     opacity: 0;
     transform: translateY(-25%);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity var(--footer-duration) ease,
+      transform var(--footer-duration) ease;
   }
 
   footer.visible img {

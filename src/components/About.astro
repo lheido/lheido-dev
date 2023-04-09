@@ -1,4 +1,12 @@
 ---
+import {
+  dossierUrl,
+  githubUrl,
+  instagramUrl,
+  linkedInUrl,
+} from "../shared/utils";
+import Icon from "./Icon";
+
 export interface Props {
   title: string;
 }
@@ -237,87 +245,148 @@ const { title } = Astro.props;
   >
     <slot />
   </div>
-
-  <style>
-    :root {
-      --about-me-sbw: 0%;
-      --about-me-bw: 28%;
-      --about-me-duration: 0.8s;
-    }
-
-    section::before {
-      @apply absolute h-full top-0 left-0 bg-primary;
-      @apply w-[--about-me-sbw];
-      content: "";
-      transition: width var(--about-me-duration) ease;
-    }
-
-    section.visible::before {
-      @apply w-[--about-me-bw];
-    }
-
-    .content {
-      @apply translate-y-[25%] opacity-0;
-      transition: transform var(--about-me-duration) ease,
-        opacity var(--about-me-duration) ease;
-    }
-
-    .visible .content {
-      @apply translate-y-0 opacity-100;
-    }
-
-    .visual {
-      @apply -translate-y-1/2 translate-x-1/2;
-      @apply md:translate-y-[20%] md:translate-x-2/4;
-      @apply opacity-75 md:opacity-0;
-      transition: top var(--about-me-duration) ease,
-        transform var(--about-me-duration) ease,
-        opacity var(--about-me-duration) ease;
-    }
-
-    .visible .visual {
-      @apply top-[14vh] translate-y-0 opacity-20;
-      @apply md:-top-[10vw] md:right-0 md:translate-y-[20%] md:translate-x-1/4 md:opacity-50;
-    }
-
-    .content::before {
-      @apply absolute top-0 left-4 md:left-8 bg-neutral md:bg-primary w-px h-full scale-y-90 md:scale-y-100;
-      content: "";
-    }
-
-    h1 {
-      background: linear-gradient(
-        90deg,
-        var(--color-neutral) var(--about-me-bw),
-        var(--color-primary) var(--about-me-bw),
-        var(--color-primary) 100%
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      -moz-background-clip: text;
-      -moz-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
-      opacity: 0;
-      transition: opacity var(--about-me-duration) ease;
-    }
-
-    .visible h1 {
-      @apply opacity-100;
-    }
-  </style>
-
-  <script>
-    import { inView } from "motion";
-
-    inView(
-      "#about-me",
-      () => {
-        document
-          .querySelector<HTMLDivElement>("#about-me")!
-          .classList.add("visible");
-      },
-      { amount: 0.75 }
-    );
-  </script>
+  <div
+    class="socials relative md:mt-16 md:absolute md:left-[--about-me-socials-left] md:-translate-x-1/2 md:bottom-16 text-primary-content max-md:bg-neutral max-md:text-neutral-content max-md:p-8"
+  >
+    <ul class="flex flex-col gap-4 mt-16 mx-auto">
+      <li>
+        <a
+          class="flex items-center gap-4 hover:bg-primary-focus px-4 py-2 rounded transition-colors"
+          href={linkedInUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon icon="linkedin" />
+          <span>LinkedIn</span>
+        </a>
+      </li>
+      <li>
+        <a
+          class="flex items-center gap-4 hover:bg-primary-focus px-4 py-2 rounded transition-colors"
+          href={githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon icon="github" />
+          <span>GitHub</span>
+        </a>
+      </li>
+      <li>
+        <a
+          class="flex items-center gap-4 hover:bg-primary-focus px-4 py-2 rounded transition-colors"
+          href={instagramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon icon="instagram" />
+          <span>Instagram</span>
+        </a>
+      </li>
+      <li>
+        <a
+          class="flex items-center gap-4 hover:bg-primary-focus px-4 py-2 rounded transition-colors"
+          href={dossierUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon icon="fold" />
+          <span>Dossier de compétences</span>
+        </a>
+      </li>
+    </ul>
+  </div>
 </section>
+
+<style>
+  :root {
+    --about-me-sbw: 0%;
+    --about-me-bw: 28%;
+    --about-me-socials-left: calc(var(--about-me-bw) / 2);
+    --about-me-duration: 0.8s;
+  }
+
+  section::before {
+    @apply absolute h-full top-0 left-0 bg-primary;
+    @apply w-[--about-me-sbw];
+    content: "";
+    transition: width var(--about-me-duration) ease;
+  }
+
+  section.visible::before {
+    @apply w-[--about-me-bw];
+  }
+
+  .content {
+    @apply translate-y-[25%] opacity-0;
+    transition: transform var(--about-me-duration) ease,
+      opacity var(--about-me-duration) ease;
+  }
+
+  .visible .content {
+    @apply translate-y-0 opacity-100;
+  }
+
+  .visual {
+    @apply -translate-y-1/2 translate-x-1/2;
+    @apply md:translate-y-[20%] md:translate-x-2/4;
+    @apply opacity-75 md:opacity-0;
+    transition: top var(--about-me-duration) ease,
+      transform var(--about-me-duration) ease,
+      opacity var(--about-me-duration) ease;
+  }
+
+  .visible .visual {
+    @apply top-[14vh] translate-y-0 opacity-20;
+    @apply md:-top-[10vw] md:right-0 md:translate-y-[20%] md:translate-x-1/4 md:opacity-50;
+  }
+
+  .content::before {
+    @apply absolute top-0 left-4 md:left-8 bg-neutral md:bg-primary w-px h-full scale-y-90 md:scale-y-100;
+    content: "";
+  }
+
+  h1 {
+    background: linear-gradient(
+      90deg,
+      var(--color-neutral) var(--about-me-bw),
+      var(--color-primary) var(--about-me-bw),
+      var(--color-primary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    opacity: 0;
+    transition: opacity var(--about-me-duration) ease;
+  }
+
+  .visible h1 {
+    @apply opacity-100;
+  }
+
+  .socials {
+    @apply max-md:translate-y-1/2 md:-translate-x-full opacity-0;
+    transition: transform var(--about-me-duration) ease,
+      opacity var(--about-me-duration) ease;
+  }
+
+  .visible .socials {
+    @apply max-md:translate-y-0 md:-translate-x-1/2 opacity-100;
+  }
+</style>
+
+<script>
+  import { inView } from "motion";
+
+  inView(
+    "#about-me",
+    () => {
+      document
+        .querySelector<HTMLDivElement>("#about-me")!
+        .classList.add("visible");
+    },
+    { amount: 0.5 }
+  );
+</script>

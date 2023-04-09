@@ -5,6 +5,7 @@ import Kitae from "../components/Kitae.astro";
 import Mel from "../components/Mel.astro";
 import PinkDog from "../components/PinkDog.astro";
 import Layout from "../layouts/Layout.astro";
+import { pinkDogUrl } from "../shared/utils";
 ---
 
 <Layout title="Léonard Treille - Développeur">
@@ -205,8 +206,8 @@ import Layout from "../layouts/Layout.astro";
           <br />
           Le design a été fait sur Figma. Les images, illustrations et photos sont
           réalisées par <a
-            class="hover:text-[#ed83c2] transition-colors"
-            href="https://www.pink-dog.fr/"
+            class="hover:text-[#ed83c2] transition-colors underline"
+            href={pinkDogUrl}
             target="_blank"
             rel="noopener noreferrer">Pink Dog</a
           >.
@@ -235,13 +236,11 @@ import Layout from "../layouts/Layout.astro";
           personnaliser l'application.
           <br />
           Le design et les illustrations ont été réalisés par <a
-            class="hover:text-[#ed83c2] transition-colors"
-            href="https://www.pink-dog.fr/"
+            class="hover:text-[#ed83c2] transition-colors underline"
+            href={pinkDogUrl}
             target="_blank"
-            rel="noopener noreferrer"
-          >
-            Pink Dog
-          </a>.
+            rel="noopener noreferrer">Pink Dog</a
+          >.
           <br />
           Une nouvelle version avec un nouveau design, pensé par Pink Dog et moi-même,
           est prévue pour bientôt.
