@@ -8,20 +8,97 @@ const { title } = Astro.props;
 
 <section
   id="project-pink-dog"
-  class="relative min-h-screen overflow-hidden bg-primary flex flex-col"
+  class="relative min-h-screen overflow-hidden bg-neutral text-neutral-content flex flex-col"
 >
   <img
-    class="logo logo w-[30vw] h-[30vw] max-md:hidden absolute bottom-0 right-0"
-    src="/pink-dog.png"
+    class="logo w-[25vw] h-[25vw] max-md:hidden absolute top-0 left-0 -translate-x-[5vw]"
+    src="https://ik.imagekit.io/lheido/pink-dog.png"
     alt="Pink Dog logo"
   />
-  <h1><span>{title}</span></h1>
-  <div class="content">
+  <h1
+    class="relative text-right font-bold px-8 py-[10vh] md:py-[8vh] md:px-16 xl:py-[16vh] text-[15vw] md:text-[9vw]"
+  >
+    <span>{title}</span>
+  </h1>
+  <div
+    class="content flex-1 flex flex-col relative p-8 md:px-16 max-md:bg-primary-focus max-md:text-primary-content"
+  >
     <slot />
   </div>
 </section>
 
-<style></style>
+<style>
+  :root {
+    --pink-dog-sbw: 0%;
+    --pink-dog-bw: 28%;
+    --pink-dog-rbw: calc(100% - var(--pink-dog-bw));
+    --pink-dog-duration: 0.5s;
+  }
+
+  section::before {
+    @apply absolute h-full top-0 right-0 bg-primary;
+    @apply w-[--pink-dog-sbw];
+    content: "";
+    transition: width var(--pink-dog-duration) ease;
+  }
+
+  section.visible::before {
+    @apply w-[--pink-dog-bw];
+  }
+
+  h1 {
+    background: linear-gradient(
+      90deg,
+      var(--color-primary) var(--pink-dog-rbw),
+      var(--color-neutral) var(--pink-dog-rbw),
+      var(--color-neutral) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    opacity: 0;
+    transition: opacity var(--pink-dog-duration) ease;
+  }
+
+  .visible h1 {
+    @apply opacity-100;
+  }
+
+  .logo {
+    @apply opacity-0 scale-50;
+    transition: opacity var(--pink-dog-duration) ease,
+      transform var(--pink-dog-duration) ease;
+  }
+
+  .visible .logo {
+    @apply opacity-30 scale-100;
+  }
+</style>
+
+<style is:global>
+  #project-pink-dog .content .grid > :nth-child(1) {
+    @apply opacity-0 translate-y-1/4;
+    transition: opacity var(--pink-dog-duration) ease,
+      transform var(--pink-dog-duration) ease;
+  }
+
+  #project-pink-dog.visible .content .grid > :nth-child(1) {
+    @apply opacity-100 translate-y-0;
+  }
+
+  #project-pink-dog .content .grid > :nth-child(2) {
+    @apply opacity-0 scale-75;
+    transition: opacity var(--pink-dog-duration) ease,
+      transform var(--pink-dog-duration) ease;
+  }
+
+  #project-pink-dog.visible .content .grid > :nth-child(2) {
+    @apply opacity-100 scale-100;
+  }
+</style>
 
 <script>
   import { inView } from "motion";

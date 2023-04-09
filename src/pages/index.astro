@@ -187,26 +187,66 @@ import Layout from "../layouts/Layout.astro";
       <div class="flex-1 flex justify-center items-center">
         <img
           class="rounded-lg shadow-lg"
-          src="/kitae-screenshot-for-web.png"
+          src="https://ik.imagekit.io/lheido/kitae-screenshot-for-web.png"
           alt="Kitae screenshot"
         />
       </div>
     </Kitae>
     <PinkDog title="Pink Dog">
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor neque,
-        at veritatis provident odit suscipit quaerat, praesentium perferendis
-        delectus aliquid saepe sit placeat, maiores repellat ab quam facilis
-        ipsum officia.
-      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 flex-1 items-center gap-4">
+        <p>
+          Site web responsive réalisé avec Astro, Solidjs, Tailwindcss et Vite.
+          <br />
+          Une particularité du site, c'est qu'il y a 3 thèmes différents, un pour
+          chaque service proposé par l'entreprise.
+          <br />
+          Un travail particulier a été fait sur l'animation au scroll de la page
+          d'accueil, le référencement naturel et l'accessibilité.
+          <br />
+          Le design a été fait sur Figma. Les images, illustrations et photos sont
+          réalisées par <a
+            class="hover:text-[#ed83c2] transition-colors"
+            href="https://www.pink-dog.fr/"
+            target="_blank"
+            rel="noopener noreferrer">Pink Dog</a
+          >.
+        </p>
+        <img
+          class="rounded-lg shadow-lg xl:max-h-64"
+          src="https://ik.imagekit.io/lheido/pink-dog-screenshot-for-web.png?tr=w-800,h-400"
+          alt="Capture d'écran du site"
+        />
+      </div>
     </PinkDog>
     <Mel title="My Everyday Lolita">
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor neque,
-        at veritatis provident odit suscipit quaerat, praesentium perferendis
-        delectus aliquid saepe sit placeat, maiores repellat ab quam facilis
-        ipsum officia.
-      </p>
+      <div class="flex max-md:flex-col flex-1 items-center gap-4">
+        <img
+          class="rounded-lg shadow-lg max-h-[38vh]"
+          src="https://ik.imagekit.io/lheido/mel-screenshot-for-web.png"
+          alt="Capture d'écran du site"
+        />
+        <p class="p-8">
+          PWA réalisé avec Angular, Nestjs, Docker.
+          <br />
+          C'est une application de gestion de garde robe Lolita avec une estétique
+          kawaii.
+          <br />
+          Parce que la mode lolita est très variée, il y a plusieurs themes pour
+          personnaliser l'application.
+          <br />
+          Le design et les illustrations ont été réalisés par <a
+            class="hover:text-[#ed83c2] transition-colors"
+            href="https://www.pink-dog.fr/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pink Dog
+          </a>.
+          <br />
+          Une nouvelle version avec un nouveau design, pensé par Pink Dog et moi-même,
+          est prévue pour bientôt.
+        </p>
+      </div>
     </Mel>
   </main>
 </Layout>

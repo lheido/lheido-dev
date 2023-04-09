@@ -14,9 +14,9 @@ const Cube: Component = () => {
     >
       <div class="cube" aria-hidden="true">
         <div class="front">٩(｡•́‿•̀｡)۶</div>
-        <div class="back">(¬‿¬ )</div>
-        <div class="left">┐(‘～` )┌</div>
-        <div class="right">(ღ˘⌣˘ღ)</div>
+        <div class="back">٩(× ×)۶</div>
+        <div class="left"></div>
+        <div class="right"></div>
         <div class="top"></div>
         <div class="bottom"></div>
       </div>

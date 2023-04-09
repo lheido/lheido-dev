@@ -8,20 +8,107 @@ const { title } = Astro.props;
 
 <section
   id="project-mel"
-  class="relative min-h-screen overflow-hidden bg-primary flex flex-col"
+  class="relative min-h-screen overflow-hidden bg-neutral text-neutral-content flex flex-col"
 >
   <img
-    class="logo w-[20vw] h-[20vw] max-md:hidden absolute bottom-0 right-0 rounded-3xl"
-    src="/mel.png"
+    class="logo w-[20vw] h-[20vw] max-md:hidden absolute bottom-0 right-0 rounded-full"
+    src="https://ik.imagekit.io/lheido/mel.png"
     alt="My Everyday Lolita logo"
   />
-  <h1><span>{title}</span></h1>
-  <div class="content">
+  <h1
+    class="relative font-bold px-8 py-[10vh] md:py-[8vh] md:px-16 xl:py-[16vh] text-[12vw] md:text-[7.4vw]"
+  >
+    <span>{title}</span>
+  </h1>
+  <div
+    class="content md:ml-[--mel-content-ml] flex-1 flex flex-col relative py-8 max-md:bg-primary-focus max-md:text-primary-content"
+  >
     <slot />
   </div>
 </section>
 
-<style></style>
+<style>
+  :root {
+    --mel-sbw: 0%;
+    --mel-bw: 28%;
+    --mel-content-ml: calc(var(--mel-bw) - 5%);
+    --mel-duration: 0.8s;
+  }
+
+  section::before {
+    @apply absolute h-full top-0 left-0 bg-primary;
+    @apply w-[--mel-sbw];
+    content: "";
+    transition: width var(--mel-duration) ease;
+  }
+
+  section.visible::before {
+    @apply w-[--mel-bw];
+  }
+
+  .content {
+    @apply translate-y-[25%] opacity-0;
+    transition: transform var(--mel-duration) ease,
+      opacity var(--mel-duration) ease;
+  }
+
+  .visible .content {
+    @apply translate-y-0 opacity-100;
+  }
+
+  h1 {
+    background: linear-gradient(
+      90deg,
+      var(--color-neutral) var(--mel-bw),
+      var(--color-primary) var(--mel-bw),
+      var(--color-primary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    opacity: 0;
+    transition: opacity var(--mel-duration) ease;
+  }
+
+  .visible h1 {
+    @apply opacity-100;
+  }
+
+  .logo {
+    @apply opacity-0 translate-x-full translate-y-full;
+    transition: opacity var(--project-kitae-duration) ease,
+      transform var(--project-kitae-duration) ease;
+  }
+
+  .visible .logo {
+    @apply opacity-60 translate-x-1/4 translate-y-1/4;
+  }
+</style>
+
+<style is:global>
+  #project-mel .content .flex > :nth-child(2) {
+    @apply opacity-0 translate-y-1/4;
+    transition: opacity var(--mel-duration) ease,
+      transform var(--mel-duration) ease;
+  }
+
+  #project-mel.visible .content .flex > :nth-child(2) {
+    @apply opacity-100 translate-y-0;
+  }
+
+  #project-mel .content .flex > :nth-child(1) {
+    @apply opacity-0 scale-75;
+    transition: opacity var(--mel-duration) ease,
+      transform var(--mel-duration) ease;
+  }
+
+  #project-mel.visible .content .flex > :nth-child(1) {
+    @apply opacity-100 scale-100;
+  }
+</style>
 
 <script>
   import { inView } from "motion";
