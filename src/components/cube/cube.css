@@ -15,8 +15,8 @@
   @apply relative;
   height: var(--cube-size);
   width: var(--cube-size);
-  transform: scale3d(var(--cube-scale), var(--cube-scale), var(--cube-scale))
-    rotateX(-25deg) rotateY(var(--cube-ry)) rotateZ(0deg);
+  /* transform: scale3d(var(--cube-scale), var(--cube-scale), var(--cube-scale))
+    rotateX(-25deg) rotateY(var(--cube-ry)) rotateZ(0deg); */
   transform-style: preserve-3d;
 }
 

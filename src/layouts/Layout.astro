@@ -1,7 +1,6 @@
 ---
 import "overlayscrollbars/overlayscrollbars.css";
 import Footer from "../components/Footer.astro";
-import Cube from "../components/cube/Cube";
 
 export interface Props {
   title: string;
@@ -72,7 +71,7 @@ const { title, lang = "fr" } = Astro.props;
       </symbol>
     </svg>
     <slot />
-    <Cube />
+    <!-- <Cube client:idle /> -->
     <Footer />
   </body>
 </html>
@@ -113,7 +112,7 @@ const { title, lang = "fr" } = Astro.props;
 </style>
 <script>
   import { OverlayScrollbars } from "overlayscrollbars";
-  OverlayScrollbars(document.body, {
+  (window as any).lheidoOSI = OverlayScrollbars(document.body, {
     scrollbars: {
       autoHide: "move",
       autoHideDelay: 500,
