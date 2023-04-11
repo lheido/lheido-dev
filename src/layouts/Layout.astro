@@ -5,9 +5,14 @@ import Footer from "../components/Footer.astro";
 export interface Props {
   title: string;
   lang?: "fr" | "en";
+  description?: string;
 }
 
-const { title, lang = "fr" } = Astro.props;
+const {
+  title,
+  lang = "fr",
+  description = "Développeur Frontend, créateur de sites web et d'applications web à Montpellier",
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -17,10 +22,17 @@ const { title, lang = "fr" } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.lheido.dev" />
     <meta
-      name="description"
-      content="Je vous parle pas trop de moi, surtout de mes projets ! ＼(٥⁀▽⁀ )／"
+      property="og:image"
+      content="https://ik.imagekit.io/lheido/home-4.png"
     />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Léonard Treille" />
+    <meta property="og:locale" content={lang} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
