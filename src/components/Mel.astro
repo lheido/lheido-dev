@@ -111,15 +111,7 @@ const { title } = Astro.props;
 </style>
 
 <script>
-  import { inView } from "motion";
+  import { inView } from "../shared/in-view";
 
-  inView(
-    "#project-mel",
-    () => {
-      document
-        .querySelector<HTMLDivElement>("#project-mel")!
-        .classList.add("visible");
-    },
-    { amount: 0.75 }
-  );
+  inView("#project-mel");
 </script>
