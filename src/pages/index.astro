@@ -1,9 +1,9 @@
 ---
 import About from "../components/About.astro";
 import Home from "../components/Home.astro";
-import Kitae from "../components/Kitae.astro";
 import Mel from "../components/Mel.astro";
 import PinkDog from "../components/PinkDog.astro";
+import SkateparkWeather from "../components/SkateparkWeather.astro";
 import Layout from "../layouts/Layout.astro";
 import { pinkDogUrl } from "../shared/utils";
 ---
@@ -16,7 +16,7 @@ import { pinkDogUrl } from "../shared/utils";
         Je n'aime pas parler de moi donc je ne ferai pas de monologue
         interminable !<br />
         Vanilla, Solidjs, Angular, Node.js, je fais du Javascript depuis plus de
-        7 ans maintenant.<br />
+        8 ans maintenant.<br />
         Que ce soit en autodidacte ou via mon expérience pro, j'aime apprendre de
         nouvelles choses chaque jour que
         <span class="line-through">dieu</span>… je code. <br />
@@ -28,173 +28,31 @@ import { pinkDogUrl } from "../shared/utils";
         >
       </p>
     </About>
-    <Kitae title="Kitae">
-      <div class="flex flex-col justify-center items-center gap-8">
-        <p>
-          Un de mes projets personnels,<br />Kitae est une application
-          low-no-code permettant en quelques clics la création de :
-        </p>
-        <ul class="grid grid-cols-1 md:grid-cols-3 gap-2 w-fit mx-auto">
-          <li
-            class="p-4 bg-primary-focus rounded relative overflow-hidden pr-16"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 32 32"
-              class="w-16 h-16 absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 rotate-45 opacity-20"
-            >
-              <g
-                stroke-linecap="square"
-                stroke-linejoin="miter"
-                stroke-width="2"
-                fill="none"
-                class="stroke-primary-content"
-                stroke-miterlimit="10"
-              >
-                <line
-                  x1="16"
-                  y1="1"
-                  x2="16"
-                  y2="31"
-                  stroke-linecap="butt"
-                  class="stroke-primary-content"></line>
-                <line
-                  x1="1"
-                  y1="16"
-                  x2="31"
-                  y2="16"
-                  stroke-linecap="butt"
-                  class="stroke-primary-content"></line>
-                <ellipse
-                  cx="16"
-                  cy="16"
-                  rx="8.571"
-                  ry="15"
-                  class="stroke-primary-content"
-                >
-                </ellipse>
-                <line
-                  x1="3.31"
-                  y1="8"
-                  x2="28.69"
-                  y2="8"
-                  stroke-linecap="butt"
-                  class="stroke-primary-content"></line>
-                <line
-                  x1="3.31"
-                  y1="24"
-                  x2="28.69"
-                  y2="24"
-                  stroke-linecap="butt"
-                  class="stroke-primary-content"></line>
-                <circle cx="16" cy="16" r="15"></circle>
-              </g>
-            </svg>
-            <span>Sites web</span>
-          </li>
-          <li
-            class="p-4 bg-primary-focus rounded relative overflow-hidden pr-16"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 32 32"
-              class="w-12 h-12 absolute -bottom-0 -right-0 opacity-20"
-            >
-              <g class="fill-primary-content">
-                <path
-                  d="M29.5,13h-11c-1.381,0-2.5,1.119-2.5,2.5v14c0,1.381,1.119,2.5,2.5,2.5h11.5c1.105,0,2-.895,2-2V15.5c0-1.381-1.119-2.5-2.5-2.5Zm.5,15.5c0,.276-.224,.5-.5,.5h-11c-.276,0-.5-.224-.5-.5V15.5c0-.276,.224-.5,.5-.5h11c.276,0,.5,.224,.5,.5v13Z"
-                ></path>
-                <path
-                  d="M2,23.5V2.5c0-.276,.224-.5,.5-.5H21.5c.276,0,.5,.224,.5,.5V11h2V2.5c0-1.381-1.119-2.5-2.5-2.5H2.5C1.119,0,0,1.119,0,2.5V25.5c0,1.381,1.119,2.5,2.5,2.5H14v-4H2.5c-.276,0-.5-.224-.5-.5Z"
-                ></path>
-              </g>
-            </svg>
-            <span>Applications</span>
-          </li>
-          <li
-            class="p-4 bg-primary-focus rounded relative overflow-hidden pr-16"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 32 32"
-              class="w-16 h-16 absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 rotate-45 opacity-20"
-            >
-              <g class="fill-primary-content">
-                <rect width="8" height="8" rx="1" ry="1"></rect>
-                <rect x="24" y="24" width="8" height="8" rx="1" ry="1"></rect>
-                <path
-                  d="M5,22V10H3V22a7.008,7.008,0,0,0,7,7H22V27H10A5.006,5.006,0,0,1,5,22Z"
-                ></path>
-                <path
-                  d="M27,10V22h2V10a7.008,7.008,0,0,0-7-7H10V5H22A5.006,5.006,0,0,1,27,10Z"
-                ></path>
-              </g>
-            </svg>
-            <span>Design systems</span>
-          </li>
-        </ul>
-        <div class="w-fit mx-auto flex flex-col gap-2">
-          <a
-            class="bg-neutral text-neutral-content py-2 px-4 rounded flex items-center gap-2 md:gap-4"
-            href="https://github.com/lheido/kitae"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16"
-              class="inline-block w-6 h-6"
-            >
-              <g>
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  class="fill-neutral-content"
-                  d="M8,0.2c-4.4,0-8,3.6-8,8c0,3.5,2.3,6.5,5.5,7.6 C5.9,15.9,6,15.6,6,15.4c0-0.2,0-0.7,0-1.4C3.8,14.5,3.3,13,3.3,13c-0.4-0.9-0.9-1.2-0.9-1.2c-0.7-0.5,0.1-0.5,0.1-0.5 c0.8,0.1,1.2,0.8,1.2,0.8C4.4,13.4,5.6,13,6,12.8c0.1-0.5,0.3-0.9,0.5-1.1c-1.8-0.2-3.6-0.9-3.6-4c0-0.9,0.3-1.6,0.8-2.1 c-0.1-0.2-0.4-1,0.1-2.1c0,0,0.7-0.2,2.2,0.8c0.6-0.2,1.3-0.3,2-0.3c0.7,0,1.4,0.1,2,0.3c1.5-1,2.2-0.8,2.2-0.8 c0.4,1.1,0.2,1.9,0.1,2.1c0.5,0.6,0.8,1.3,0.8,2.1c0,3.1-1.9,3.7-3.7,3.9C9.7,12,10,12.5,10,13.2c0,1.1,0,1.9,0,2.2 c0,0.2,0.1,0.5,0.6,0.4c3.2-1.1,5.5-4.1,5.5-7.6C16,3.8,12.4,0.2,8,0.2z"
-                ></path>
-              </g>
-            </svg>
-            <span class="flex-1">Et tout ça en open source !</span>
-            <span class="text-accent">(°◡°♡)</span>
-          </a>
-          <a
-            class="bg-neutral text-neutral-content py-2 px-4 rounded flex items-center gap-2 md:gap-4"
-            href="https://discord.gg/ZrnJx8856P"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16"
-              class="inline-block w-6 h-6"
-            >
-              <g class="fill-neutral-content">
-                <path
-                  d="M6.552,6.712a.891.891,0,0,0,0,1.776A.852.852,0,0,0,7.368,7.6.847.847,0,0,0,6.552,6.712Zm2.92,0a.891.891,0,1,0,.816.888A.852.852,0,0,0,9.472,6.712Z"
-                ></path>
-                <path
-                  d="M13.36,0H2.64A1.644,1.644,0,0,0,1,1.648V12.464a1.644,1.644,0,0,0,1.64,1.648h9.072l-.424-1.48,1.024.952.968.9L15,16V1.648A1.644,1.644,0,0,0,13.36,0ZM10.272,10.448S9.984,10.1,9.744,9.8a2.524,2.524,0,0,0,1.448-.952,4.578,4.578,0,0,1-.92.472,5.265,5.265,0,0,1-1.16.344A5.6,5.6,0,0,1,7.04,9.656a6.716,6.716,0,0,1-1.176-.344,4.683,4.683,0,0,1-.912-.472,2.488,2.488,0,0,0,1.4.944c-.24.3-.536.664-.536.664a2.9,2.9,0,0,1-2.44-1.216A10.713,10.713,0,0,1,4.528,4.568a3.956,3.956,0,0,1,2.248-.84l.08.1a5.4,5.4,0,0,0-2.1,1.048s.176-.1.472-.232a6.008,6.008,0,0,1,1.816-.5.788.788,0,0,1,.136-.016A6.769,6.769,0,0,1,8.792,4.1a6.521,6.521,0,0,1,2.408.768A5.324,5.324,0,0,0,9.208,3.856l.112-.128a3.956,3.956,0,0,1,2.248.84A10.713,10.713,0,0,1,12.72,9.232,2.924,2.924,0,0,1,10.272,10.448Z"
-                ></path>
-              </g>
-            </svg>
-            <span class="flex-1">Serveur discord par ici !</span>
-            <span class="text-accent">(⌒_⌒;)</span>
-          </a>
-        </div>
-        <p>
-          Kitae est un projet qui me tient à cœur, il est en cours de
-          développement <br /> mais vous pouvez suivre l'avancement sur le serveur
-          discord ci-dessus.
-        </p>
-      </div>
+    <SkateparkWeather title="Skatepark Weather">
       <div class="flex-1 flex justify-center items-center">
         <img
-          class="rounded-lg shadow-lg"
-          src="https://ik.imagekit.io/lheido/kitae-screenshot-for-web.png"
-          alt="Kitae screenshot"
+          class="rounded-lg shadow-lg max-w-xs"
+          src="https://ik.imagekit.io/lheido/skatepark-weather-screenshot.jpg"
+          alt="Skatepark Weather screenshot"
         />
       </div>
-    </Kitae>
+      <div class="flex flex-col justify-center items-center gap-8 mb-16">
+        <p>
+          Une application météo dédiée aux skateparks en France.<br />
+          N'hésitez pas à me contacter si votre skatepark préféré n'est pas présent
+          dans la liste !<br />
+          C'est une PWA faite avec Solidjs, Supabase et déployée avec Netlify.
+          <br />
+          Vous pouvez l'installer en suivant le lien ci-dessous :<br />
+          <a
+            class="text-accent bg-accent-content inline-block p-4 rounded-lg mt-4"
+            href="https://skatepark-weather.netlify.app/"
+          >
+            https://skatepark-weather.netlify.app
+          </a>
+        </p>
+      </div>
+    </SkateparkWeather>
     <PinkDog title="Pink Dog">
       <div class="grid grid-cols-1 md:grid-cols-2 flex-1 items-center gap-4">
         <p>
@@ -213,6 +71,17 @@ import { pinkDogUrl } from "../shared/utils";
             target="_blank"
             rel="noopener noreferrer">Pink Dog</a
           >.
+          <br />
+          Allez voir le site en cliquant sur le lien ci-dessous :
+          <br />
+          <a
+            class="bg-accent text-accent-content inline-block p-4 rounded-lg mt-4"
+            href={pinkDogUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {pinkDogUrl}
+          </a>
         </p>
         <img
           class="rounded-lg shadow-lg xl:max-h-64"
